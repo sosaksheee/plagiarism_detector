@@ -20,7 +20,7 @@ SBERT_THRESHOLD = 0.80
 SBERT_MODEL = "all-MiniLM-L6-v2"
 
 
-# ---------------- Core Logic ----------------
+# Core Logic 
 
 def load_file(path: Path) -> Tuple[str, str]:
     return path.name, path.read_text(encoding="utf-8")
@@ -97,7 +97,7 @@ def run_plagiarism(query: Tuple[str, str], references: List[Tuple[str, str]]) ->
     return pd.DataFrame(rows).sort_values(by=["SBERT", "TF-IDF"], ascending=False)
 
 
-# ---------------- GUI ----------------
+# GUI 
 
 class PlagiarismGUI:
     def __init__(self, root: tk.Tk):
@@ -169,3 +169,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
